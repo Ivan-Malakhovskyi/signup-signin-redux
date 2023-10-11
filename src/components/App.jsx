@@ -1,47 +1,43 @@
 import { GlobalStyle } from 'GlobalStyle';
-import { Layout } from 'Layout';
-import { Filter } from './phoneBook/contactFilter/conatactFilter';
-import { MainTitle, Title } from './phoneBook/contactList/contactList.styled';
-import { FormUser } from './phoneBook/contactForm/contactForm';
-import { ContactList } from './phoneBook/contactList/contactList';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectError, selectIsLoading } from 'redux/selectors';
-import { useEffect } from 'react';
-import { serviceContacts } from 'redux/operations';
+
+// import { Filter } from './phoneBook/contactFilter/conatactFilter';
+// import { MainTitle, Title } from './phoneBook/contactList/contactList.styled';
+// import { FormUser } from './phoneBook/contactForm/contactForm';
+// import { ContactList } from './phoneBook/contactList/contactList';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { selectError, selectIsLoading } from 'redux/selectors';
+// import { useEffect } from 'react';
+// import { serviceContacts } from 'components/auth/auth-operations';
+import { Route, Routes } from 'react-router-dom';
+
+import { Layout } from './layout/Layout';
+import { lazy } from 'react';
+
+const Home = lazy(() => import('./pages/Home'));
+const Registration = lazy(() => import('./pages/Registration'));
+const Login = lazy(() => import('./pages/Login'));
+const Contacts = lazy(() => import('./pages/Contacts'));
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+  // const dispatch = useDispatch();
+  // const isLoading = useSelector(selectIsLoading);
+  // const error = useSelector(selectError);
 
-  useEffect(() => {
-    dispatch(serviceContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(serviceContacts());
+  // }, [dispatch]);
 
   return (
-    <Layout>
-      <MainTitle>Phone book</MainTitle>
-
-      <FormUser />
-
-      <Title>Contacts</Title>
-
-      {isLoading && !error && (
-        <p
-          style={{
-            textAlign: 'center',
-            fontWeight: 'bold',
-          }}
-        >
-          Завантажуємо дані👌...
-        </p>
-      )}
-
-      <Filter />
-
-      <ContactList />
-
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="register" element={<Registration />} />
+          <Route path="login" element={<Login />} />
+          <Route path="contacts" element={<Contacts />} />
+        </Route>
+      </Routes>
       <GlobalStyle />
-    </Layout>
+    </>
   );
 };

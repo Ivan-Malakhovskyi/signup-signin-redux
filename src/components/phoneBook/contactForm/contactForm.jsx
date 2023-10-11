@@ -10,7 +10,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import toast, { Toaster } from 'react-hot-toast';
-import { addContact } from 'redux/operations';
+// import { addContact } from 'components/auth/auth-operations';
 
 const schema = yup.object().shape({
   name: yup
@@ -31,10 +31,14 @@ const schema = yup.object().shape({
 export const FormUser = () => {
   const contacts = useSelector(selectContacts);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
-    const { name, phone } = values;
+    const {
+      name,
+
+      phone,
+    } = values;
 
     if (
       contacts.find(
@@ -46,7 +50,7 @@ export const FormUser = () => {
       return;
     }
 
-    dispatch(addContact({ name, phone }));
+    // dispatch(addContact({ name, phone }));
 
     toast.success(`${name} has succesfully added to your phonebook`);
     resetForm();

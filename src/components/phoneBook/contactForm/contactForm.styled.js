@@ -12,7 +12,7 @@ export const ContactForm = styled(Form)`
   flex-flow: column;
   gap: 16px;
   padding: 20px;
-  border-radius: 4px;
+
   background-color: ${({ theme: { colors } }) => colors.white};
   box-shadow: ${({ theme: { shadows } }) => shadows.addBoxShadow};
 `;
@@ -21,7 +21,7 @@ export const LabelForm = styled.label`
 
 color: ${({ theme: { colors } }) => colors.black};
 margin: 0;
-margin-bottom: 16px
+margin-bottom: 16px;
 font-size: 14px;
 font-style: normal;
 font-weight: 700;
@@ -34,7 +34,7 @@ export const ErrorMsg = styled(ErrorMessage)`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1; /* 100% */
+  line-height: 1; 
   letter-spacing: -0.72px;
   color: red;
 `;
@@ -42,7 +42,19 @@ export const ErrorMsg = styled(ErrorMessage)`
 export const FieldForm = styled(Field)`
   display: flex;
   padding: 10px;
+  border: none;
+  border: 1px solid ${({theme: {colors}}) => colors.inputGrey};
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: ${({ theme: { colors } }) => colors.black};
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus,
+  &:active {
+    border-color: #1db954;
+    outline: none;
+  }
 `;
 
 export const Buttons = styled.button`
@@ -54,18 +66,18 @@ export const Buttons = styled.button`
   margin: 0 auto;
   cursor: pointer;
   color: ${({ theme: { colors } }) => colors.black};
-  background-color: ${({ theme: { colors } }) => colors.white};
+  background-color: ${({ theme: { colors } }) => colors.backroundBase};
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   border-radius: 40px;
-  border: 2px solid ${({ theme: { colors } }) => colors.borderListColor};
+  border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    background-color: ${({ theme: { colors } }) => colors.borderListColor};
+    background-color: ${({ theme: { colors } }) => colors.backroundHighLight};
   }
 `;
