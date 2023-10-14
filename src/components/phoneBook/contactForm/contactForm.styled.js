@@ -18,15 +18,14 @@ export const ContactForm = styled(Form)`
 `;
 
 export const LabelForm = styled.label`
-
-color: ${({ theme: { colors } }) => colors.black};
-margin: 0;
-margin-bottom: 16px;
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: 1.33; 
-letter-spacing: -0.18px;
+  color: ${({ theme: { colors } }) => colors.black};
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.33;
+  letter-spacing: -0.18px;
 `;
 
 export const ErrorMsg = styled(ErrorMessage)`
@@ -34,7 +33,17 @@ export const ErrorMsg = styled(ErrorMessage)`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1; 
+  line-height: 1;
+  letter-spacing: -0.72px;
+  color: red;
+`;
+
+export const Error = styled(ErrorMessage)`
+  margin-top: 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
   letter-spacing: -0.72px;
   color: red;
 `;
@@ -43,7 +52,7 @@ export const FieldForm = styled(Field)`
   display: flex;
   padding: 10px;
   border: none;
-  border: 1px solid ${({theme: {colors}}) => colors.inputGrey};
+  border: 1px solid ${({ theme: { colors } }) => colors.inputGrey};
   font-size: 16px;
   border-radius: 4px;
   background-color: transparent;

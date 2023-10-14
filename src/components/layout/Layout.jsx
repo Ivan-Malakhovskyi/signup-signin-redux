@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import {
   BaseContainer,
   Header,
-  ListMainLink,
   Nav,
   StyledLink,
   StyledLinkWrapper,
@@ -15,23 +14,17 @@ export const Layout = () => {
     <BaseContainer>
       <Header>
         <Nav>
-          <ListMainLink>
+          <li>
+            <StyledLink to="/">Home</StyledLink>
+          </li>
+          <StyledLinkWrapper>
             <li>
-              <StyledLinkWrapper>
-                <StyledLink to="/">Home</StyledLink>
-              </StyledLinkWrapper>
+              <StyledLink to="/register">Sign up</StyledLink>
             </li>
             <li>
-              <StyledLinkWrapper>
-                <StyledLink to="/register">Sign up</StyledLink>
-              </StyledLinkWrapper>
+              <StyledLink to="/login">Login</StyledLink>
             </li>
-            <li>
-              <StyledLinkWrapper>
-                <StyledLink to="/login">Login</StyledLink>
-              </StyledLinkWrapper>
-            </li>
-          </ListMainLink>
+          </StyledLinkWrapper>
         </Nav>
       </Header>
       <main>

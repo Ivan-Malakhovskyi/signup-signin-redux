@@ -10,13 +10,14 @@ export const StyledLink = styled(NavLink)`
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &.active {
-    color: oranged;
+    color: ${({ theme: { colors } }) => colors.black};
     background-color: orangered;
   }
 `;
 
-export const StyledLinkWrapper = styled.span`
-  margin-right: 76px;
+export const StyledLinkWrapper = styled.div`
+  margin-left: auto;
+  display: flex;
 `;
 
 export const BaseContainer = styled.div`
@@ -35,13 +36,11 @@ export const Header = styled.header`
 `;
 
 export const Nav = styled.nav`
+  display: flex;
   color: ${({ theme: { colors } }) => colors.navColor};
 `;
 
-export const ListMainLink = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+export const HomeLink = styled.ul`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
