@@ -1,4 +1,5 @@
-import { getLoginSchema } from 'components/auth/validation';
+import { logIn } from 'redux/auth/auth-operations';
+import { getLoginSchema } from 'redux/auth/validation';
 
 import {
   ContactForm,
@@ -18,11 +19,9 @@ const Login = () => {
 
   const handleSibmit = (values, { resetForm }) => {
     const { email, password } = values;
-    console.log(values);
-
-    toast.success(`${email}${password} success`);
+    dispacth(logIn({ email, password }));
+    toast.success(`${email} success`);
     resetForm();
-    dispacth();
   };
 
   return (

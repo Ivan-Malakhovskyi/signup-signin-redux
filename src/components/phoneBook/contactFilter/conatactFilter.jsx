@@ -5,8 +5,8 @@ import {
   Search,
   ResetButtons,
 } from './contatcFilter.styled';
-import { selectFilter } from 'redux/selectors';
-import { changeValueFilter } from 'redux/filterSlice';
+import { selectFilter } from 'redux/contacts/selectors';
+import { changeValueFilter } from 'redux/contacts/filterSlice';
 
 export const Filter = () => {
   const filter = useSelector(selectFilter);

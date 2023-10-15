@@ -1,32 +1,13 @@
 import { Suspense } from 'react';
-import {
-  BaseContainer,
-  Header,
-  Nav,
-  StyledLink,
-  StyledLinkWrapper,
-} from './Layout.styled';
+import { BaseContainer } from './Layout.styled';
 
 import { Outlet } from 'react-router-dom';
+import { AppHeader } from 'components/AppHeader/AppHeader';
 
 export const Layout = () => {
   return (
     <BaseContainer>
-      <Header>
-        <Nav>
-          <li>
-            <StyledLink to="/">Home</StyledLink>
-          </li>
-          <StyledLinkWrapper>
-            <li>
-              <StyledLink to="/register">Sign up</StyledLink>
-            </li>
-            <li>
-              <StyledLink to="/login">Login</StyledLink>
-            </li>
-          </StyledLinkWrapper>
-        </Nav>
-      </Header>
+      <AppHeader />
       <main>
         <Suspense fallback={<div>Loading...👌</div>}>
           <Outlet />

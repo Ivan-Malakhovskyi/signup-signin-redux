@@ -9,9 +9,9 @@ import {
 // import { useSelector } from 'react-redux';
 // import { selectContacts } from 'redux/selectors';
 import toast, { Toaster } from 'react-hot-toast';
-import { getRegisterSchema } from 'components/auth/validation';
+import { getRegisterSchema } from 'redux/auth/validation';
 import { useDispatch } from 'react-redux';
-import { signUp } from 'components/auth/auth-operations';
+import { signUp } from 'redux/auth/auth-operations';
 
 const Registration = () => {
   const dispatch = useDispatch();

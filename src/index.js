@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import { store } from 'redux/store';
 import { BrowserRouter } from 'react-router-dom';
+// import { ChakraProvider } from '@chakra-ui/react';
 //persistor
 // import { PersistGate } from 'redux-persist/integration/react';
 
@@ -22,7 +23,7 @@ const theme = {
     addBlack: '#111',
     white: '#FFFFFF',
     grey: ' #e7e9fc',
-    inputGrey: "#ddd",
+    inputGrey: '#ddd',
     addGrey: '#B4AFAF',
     paleGreen: '#98FB98',
     dodgerBlue: '#007bff',
@@ -50,7 +51,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <BrowserRouter basename="/goit-react-hw-08-phonebook">
+          {/* <ChakraProvider> */}
           <App />
+          {/* </ChakraProvider> */}
         </BrowserRouter>
       </Provider>
     </ThemeProvider>

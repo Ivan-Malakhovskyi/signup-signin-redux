@@ -1,8 +1,15 @@
+import { Filter } from 'components/phoneBook/contactFilter/conatactFilter';
+import FormUser from 'components/phoneBook/contactForm/contactForm';
+import { ContactList } from 'components/phoneBook/contactList/contactList';
+
 const Contacts = () => {
   return (
-    <div>
+    <>
       <h2>Your contacts</h2>
-    </div>
+      <FormUser />
+      <Filter />
+      <ContactList />
+    </>
   );
 };
 
