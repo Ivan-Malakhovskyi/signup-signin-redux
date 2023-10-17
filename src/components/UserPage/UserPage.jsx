@@ -1,12 +1,12 @@
 import { Container, Topic } from 'components/AuthNavMenu/AuthNavMenu.styled';
 import { logOut } from 'redux/auth/auth-operations';
-import { authSelectors } from 'redux/auth/auth-selectors';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Button } from '@chakra-ui/react';
+import { useAuthUser } from 'hooks/useAuthUser';
 
 export const UserPage = () => {
   const dispatch = useDispatch();
-  const name = useSelector(authSelectors.getUserName);
+  const { userName } = useAuthUser();
 
   return (
     <Container>
@@ -17,7 +17,7 @@ export const UserPage = () => {
             fontWeight: 'bold',
           }}
         >
-          {name}
+          {userName}
         </span>
       </Topic>
       <Button

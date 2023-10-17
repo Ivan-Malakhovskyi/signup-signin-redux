@@ -1,9 +1,8 @@
-import { authSelectors } from 'redux/auth/auth-selectors';
 import { Nav, StyledLink } from 'components/layout/Layout.styled';
-import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useAuthUser } from 'hooks/useAuthUser';
 
 export const NavigationMenu = () => {
-  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const { isUserLoggedIn } = useAuthUser();
 
   return (
     <Nav>
@@ -11,7 +10,7 @@ export const NavigationMenu = () => {
         <StyledLink to="/">Home</StyledLink>
       </li>
 
-      {isLoggedIn && (
+      {isUserLoggedIn && (
         <li>
           <StyledLink to="/contacts">Contacts</StyledLink>
         </li>

@@ -1,12 +1,11 @@
-import { useSelector } from 'react-redux';
+import { useAuthUser } from 'hooks/useAuthUser';
 import { Navigate } from 'react-router-dom';
-import { authSelectors } from 'redux/auth/auth-selectors';
 
 export const PrivateRoute = ({ element, redirectTo = '/' }) => {
-  const isUserLoggIn = useSelector(authSelectors.getIsLoggedIn);
-  const isUserRefresh = useSelector(authSelectors.getRefresh);
+  const { isUserLoggedIn } = useAuthUser();
+  const { isUserRefresh } = useAuthUser();
 
-  const shouldRedirectUser = !isUserRefresh && !isUserLoggIn;
+  const shouldRedirectUser = !{ isUserRefresh } && !{ isUserLoggedIn };
 
   return shouldRedirectUser ? <Navigate to={redirectTo} /> : element;
 };

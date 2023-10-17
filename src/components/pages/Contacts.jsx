@@ -14,9 +14,7 @@ const Contacts = () => {
 
   return (
     <>
-      <Heading as="h2" size="xl">
-        Your contacts
-      </Heading>
+      <Heading as="h2" size="xl"></Heading>
       <FormUser />
       <Filter />
       <ContactList />

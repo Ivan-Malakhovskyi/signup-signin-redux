@@ -6,24 +6,23 @@ import {
   ErrorMsg,
   Buttons,
 } from '../phoneBook/contactForm/contactForm.styled';
-import { useSelector } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
 import { getRegisterSchema } from 'redux/auth/validation';
 import { useDispatch } from 'react-redux';
 import { signUp } from 'redux/auth/auth-operations';
-import { authSelectors } from 'redux/auth/auth-selectors';
 import { Heading } from '@chakra-ui/react';
+import { useAuthUser } from 'hooks/useAuthUser';
 
 const Registration = () => {
   const dispatch = useDispatch();
   const registerSchema = getRegisterSchema();
 
-  const isExistName = useSelector(authSelectors.getUserName);
+  const { userName } = useAuthUser();
 
   const handleSubmit = (values, { resetForm }) => {
     const { name, email, password } = values;
 
-    if (isExistName === name) {
+    if (userName === name) {
       toast.error(`Email with name ${name} already exists.`);
       resetForm();
       return;
