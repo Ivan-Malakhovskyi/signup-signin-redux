@@ -20,7 +20,7 @@ const Login = () => {
   const handleSibmit = (values, { resetForm }) => {
     const { email, password } = values;
     dispacth(logIn({ email, password }));
-    toast.success(`${email} success`);
+    toast.success(`Your account ${email} has been found, Login`);
     resetForm();
   };
 

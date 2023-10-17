@@ -1,13 +1,12 @@
 import { GlobalStyle } from 'GlobalStyle';
-
-import { useDispatch } from 'react-redux';
-// import { selectError, selectIsLoading } from 'redux/selectors';
-import { useEffect } from 'react';
-import { serviceContacts } from '../redux/contacts/contacts-operations';
 import { Route, Routes } from 'react-router-dom';
-
 import { Layout } from './layout/Layout';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { serviceCurrentUser } from 'redux/auth/auth-operations';
+import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
+import { authSelectors } from 'redux/auth/auth-selectors';
 
 const Home = lazy(() => import('./pages/Home'));
 const Registration = lazy(() => import('./pages/Registration'));
@@ -16,21 +15,41 @@ const Contacts = lazy(() => import('./pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  // const isLoading = useSelector(selectIsLoading);
-  // const error = useSelector(selectError);
+
+  const isUserRefresh = useSelector(authSelectors.getRefresh);
 
   useEffect(() => {
-    dispatch(serviceContacts());
+    dispatch(serviceCurrentUser());
   }, [dispatch]);
 
-  return (
+  return isUserRefresh ? (
+    <p>Refreshing...</p>
+  ) : (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="register" element={<Registration />} />
-          <Route path="login" element={<Login />} />
-          <Route path="contacts" element={<Contacts />} />
+          <Route
+            path="register"
+            element={
+              <RestrictedRoute
+                element={<Registration />}
+                redirectTo="/contacts"
+              />
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <RestrictedRoute element={<Login />} redirectTo="/contacts" />
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute element={<Contacts />} redirectTo="/login" />
+            }
+          />
         </Route>
       </Routes>
       <GlobalStyle />

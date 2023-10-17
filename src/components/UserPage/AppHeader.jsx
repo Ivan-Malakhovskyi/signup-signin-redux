@@ -1,4 +1,4 @@
-import { NavigationMenu } from 'components/Navigation/NavigationMenu';
+import { NavigationMenu } from 'components/UserPage/NavigationMenu';
 import { Header } from '../layout/Layout.styled';
 import { useSelector } from 'react-redux';
 import { UserPage } from 'components/UserPage/UserPage';

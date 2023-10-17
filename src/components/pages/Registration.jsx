@@ -32,7 +32,7 @@ const Registration = () => {
 
     dispatch(signUp({ name, email, password }));
 
-    toast.success(`${name} has succesfully added to your phonebook`);
+    toast.success(`Your account with name ${name}, succesfully created`);
     resetForm();
   };
 

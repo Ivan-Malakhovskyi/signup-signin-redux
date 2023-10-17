@@ -6,11 +6,19 @@ import { useDispatch, useSelector } from 'react-redux';
 export const UserPage = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
+  // const email = useSelector(authSelectors.getUserEmail);
 
   return (
     <Container>
       <Topic>
-        Welcome <span>{name}</span>
+        Welcome{' '}
+        <span
+          style={{
+            fontWeight: 'bold',
+          }}
+        >
+          {name}
+        </span>
       </Topic>
       <button type="button" onClick={() => dispatch(logOut())}>
         LogOut
