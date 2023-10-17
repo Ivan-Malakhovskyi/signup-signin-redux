@@ -33,21 +33,6 @@ export const Topic = styled.p`
   margin-bottom: 16px;
 `;
 
-export const ItemButton = styled.button`
-  background-color: transparent;
-  padding: 8px 16px;
-  border-radius: 36px;
-  border: none;
-  background-color: ${({ theme: { colors } }) => colors.buttonDeleteColor};
-  cursor: pointer;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover,
-  &:focus {
-    background-color: ${({ theme: { colors } }) => colors.red};
-  }
-`;
-
 export const MessageWrapper = styled.div`
   margin: 0 auto;
 `;

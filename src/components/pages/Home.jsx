@@ -1,5 +1,11 @@
+import { Topic, Container } from './Home.styled';
+
 const Home = () => {
-  return <h1>This is home page</h1>;
+  return (
+    <Container>
+      <Topic>This is home page</Topic>
+    </Container>
+  );
 };
 
 export default Home;

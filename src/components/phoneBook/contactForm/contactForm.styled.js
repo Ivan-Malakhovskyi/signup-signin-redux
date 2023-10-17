@@ -75,18 +75,17 @@ export const Buttons = styled.button`
   margin: 0 auto;
   cursor: pointer;
   color: ${({ theme: { colors } }) => colors.black};
-  background-color: ${({ theme: { colors } }) => colors.backroundBase};
+  border: 1px solid teal;
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   border-radius: 40px;
-  border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    background-color: ${({ theme: { colors } }) => colors.backroundHighLight};
+    background-color: teal;
   }
 `;

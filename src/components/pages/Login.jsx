@@ -12,6 +12,7 @@ import {
 
 import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
+import { Heading } from '@chakra-ui/react';
 
 const Login = () => {
   const dispacth = useDispatch();
@@ -26,7 +27,9 @@ const Login = () => {
 
   return (
     <>
-      <h1>Login pages</h1>
+      <Heading as="h2" size="xl">
+        Login page
+      </Heading>
       <Main
         initialValues={{ email: '', password: '' }}
         validationSchema={loginSchema}

@@ -2,11 +2,11 @@ import { Container, Topic } from 'components/AuthNavMenu/AuthNavMenu.styled';
 import { logOut } from 'redux/auth/auth-operations';
 import { authSelectors } from 'redux/auth/auth-selectors';
 import { useDispatch, useSelector } from 'react-redux';
+import { Button } from '@chakra-ui/react';
 
 export const UserPage = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
-  // const email = useSelector(authSelectors.getUserEmail);
 
   return (
     <Container>
@@ -20,9 +20,14 @@ export const UserPage = () => {
           {name}
         </span>
       </Topic>
-      <button type="button" onClick={() => dispatch(logOut())}>
-        LogOut
-      </button>
+      <Button
+        colorScheme="teal"
+        variant="outline"
+        type="button"
+        onClick={() => dispatch(logOut())}
+      >
+        Logout
+      </Button>
     </Container>
   );
 };

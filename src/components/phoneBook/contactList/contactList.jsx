@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { List, ListItem, Topic, ItemButton } from './contactList.styled';
+import { List, ListItem, Topic } from './contactList.styled';
 import { selectFilteredContacts } from 'redux/contacts/selectors';
 import { deleteContact } from 'redux/contacts/contacts-operations';
 import { EmptyMessage } from './emptyMessage';
+import { CloseButton, Icon } from '@chakra-ui/react';
 
 export const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
@@ -20,9 +21,10 @@ export const ContactList = () => {
             <Topic>
               {contact.name} : {contact.number}
             </Topic>
-            <ItemButton type="button" onClick={() => handleDelete(contact.id)}>
-              Delete
-            </ItemButton>
+            <Icon
+              as={CloseButton}
+              onClick={() => handleDelete(contact.id)}
+            ></Icon>
           </ListItem>
         ))}
         {contacts && contacts.length === 0 && <EmptyMessage />}

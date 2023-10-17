@@ -6,29 +6,28 @@ import {
   ErrorMsg,
   Buttons,
 } from '../phoneBook/contactForm/contactForm.styled';
-// import { useSelector } from 'react-redux';
-// import { selectContacts } from 'redux/selectors';
+import { useSelector } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
 import { getRegisterSchema } from 'redux/auth/validation';
 import { useDispatch } from 'react-redux';
 import { signUp } from 'redux/auth/auth-operations';
+import { authSelectors } from 'redux/auth/auth-selectors';
+import { Heading } from '@chakra-ui/react';
 
 const Registration = () => {
   const dispatch = useDispatch();
   const registerSchema = getRegisterSchema();
 
+  const isExistName = useSelector(authSelectors.getUserName);
+
   const handleSubmit = (values, { resetForm }) => {
     const { name, email, password } = values;
 
-    //  if (
-    //    contacts.find(
-    //      contact => contact.name.toLowerCase() === name.toLowerCase()
-    //    )
-    //  ) {
-    //    toast.error(`${name} already exists.`);
-    //    resetForm();
-    //    return;
-    //  }
+    if (isExistName === name) {
+      toast.error(`Email with name ${name} already exists.`);
+      resetForm();
+      return;
+    }
 
     dispatch(signUp({ name, email, password }));
 
@@ -38,7 +37,9 @@ const Registration = () => {
 
   return (
     <>
-      <h1>Registration</h1>
+      <Heading as="h2" size="xl">
+        Registration
+      </Heading>
       <Main
         initialValues={{ name: '', email: '', password: '' }}
         validationSchema={registerSchema}
