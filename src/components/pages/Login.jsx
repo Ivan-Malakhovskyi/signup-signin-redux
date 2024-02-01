@@ -27,7 +27,7 @@ const Login = () => {
 
   return (
     <>
-      <Heading as="h2" size="xl">
+      <Heading as="h2" size="xl" marginBottom={10}>
         Login page
       </Heading>
       <Main
@@ -44,7 +44,7 @@ const Login = () => {
 
           <LabelForm htmlFor="password">
             Password
-            <FieldForm name="password" required />
+            <FieldForm type="password" name="password" required />
             <Error name="password" component="p" />
           </LabelForm>
 

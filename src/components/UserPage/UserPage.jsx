@@ -11,7 +11,7 @@ export const UserPage = () => {
   return (
     <Container>
       <Topic>
-        Welcome{' '}
+        Welcome,{' '}
         <span
           style={{
             fontWeight: 'bold',
@@ -21,7 +21,7 @@ export const UserPage = () => {
         </span>
       </Topic>
       <Button
-        colorScheme="teal"
+        colorScheme="orange"
         variant="outline"
         type="button"
         onClick={() => dispatch(logOut())}

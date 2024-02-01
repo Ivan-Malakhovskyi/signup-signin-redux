@@ -20,10 +20,10 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   flex-basis: calc((100% - 40px) / 5);
-  border: 1px solid ${({ theme: { colors } }) => colors.borderListColor};
+  border: 1px solid ${({ theme: { colors } }) => colors.addBlack};
   padding: 10px;
   border-radius: 4px;
-  background-color: ${({ theme: { colors } }) => colors.white};
+  background-color: ${({ theme: { colors } }) => colors.MainBackgroundColor};
   margin: 10px;
 `;
 

@@ -14,21 +14,19 @@ export const ContactList = () => {
   };
 
   return (
-    <>
-      <List>
-        {contacts.map(contact => (
-          <ListItem key={contact.id}>
-            <Topic>
-              {contact.name} : {contact.number}
-            </Topic>
-            <Icon
-              as={CloseButton}
-              onClick={() => handleDelete(contact.id)}
-            ></Icon>
-          </ListItem>
-        ))}
-        {contacts && contacts.length === 0 && <EmptyMessage />}
-      </List>
-    </>
+    <List>
+      {contacts.map(contact => (
+        <ListItem key={contact.id}>
+          <Topic>
+            {contact.name} : {contact.number}
+          </Topic>
+          <Icon
+            as={CloseButton}
+            onClick={() => handleDelete(contact.id)}
+          ></Icon>
+        </ListItem>
+      ))}
+      {contacts && contacts.length === 0 && <EmptyMessage />}
+    </List>
   );
 };

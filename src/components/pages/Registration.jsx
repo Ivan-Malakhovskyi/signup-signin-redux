@@ -36,7 +36,7 @@ const Registration = () => {
 
   return (
     <>
-      <Heading as="h2" size="xl">
+      <Heading as="h2" size="xl" marginBottom={10}>
         Registration
       </Heading>
       <Main
@@ -64,7 +64,7 @@ const Registration = () => {
 
           <LabelForm htmlFor="password">
             Password
-            <FieldForm name="password" required />
+            <FieldForm type="password" name="password" required />
             <ErrorMsg name="password" component="p" />
           </LabelForm>
 

@@ -19,8 +19,8 @@ img {
 }
 
 ul,li,h1, h2, h3, h4, h5, h6, p {
-    font-family: inherit;
-      padding: 0;
+font-family: inherit;
+padding: 0;
   margin: 0;
   list-style: none;
 }

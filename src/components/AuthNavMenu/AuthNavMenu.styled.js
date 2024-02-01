@@ -7,5 +7,6 @@ export const Container = styled.div`
 `;
 
 export const Topic = styled.p`
+  color: ${({ theme: { colors } }) => colors.white};
   margin-right: 10px;
 `;

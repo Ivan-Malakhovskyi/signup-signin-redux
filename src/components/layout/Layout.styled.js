@@ -5,7 +5,7 @@ export const StyledLink = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 6px;
   text-decoration: none;
-  color: black;
+  color: ${({ theme: { colors } }) => colors.white};
   font-weight: 500;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -16,27 +16,27 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const StyledLinkWrapper = styled.div`
-  margin-left: auto;
   display: flex;
 `;
 
 export const BaseContainer = styled.div`
-  padding: 0 15px;
   height: 100vh;
-  max-width: 1200px;
   margin: 0 auto;
   background-color: ${({ theme: { colors } }) => colors.white};
   box-sizing: border-box;
 `;
 
 export const Header = styled.header`
+  /* border-radius: 6px; */
   padding: 5px;
+  background-color: #333;
   border-bottom: 1px solid ${({ theme: { colors } }) => colors.headerColor};
   box-shadow: ${({ theme: { colors } }) => colors.boxShadow};
 `;
 
 export const Nav = styled.nav`
   display: flex;
+  justify-content: space-around;
   color: ${({ theme: { colors } }) => colors.navColor};
 `;
 

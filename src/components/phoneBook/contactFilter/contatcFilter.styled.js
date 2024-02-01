@@ -29,18 +29,18 @@ export const Search = styled.input`
 
   &:focus,
   &:active {
-    border-color: #1db954;
+    border-color: ${({ theme: { colors } }) => colors.addBlack};
     outline: none;
   }
 `;
 
 export const ResetButtons = styled.button`
-  color: white;
+  color: ${({ theme: { colors } }) => colors.addBlack};
   background-color: transparent;
   padding: 8px 16px;
   border-radius: 36px;
   border: none;
-  background-color: ${({ theme: { colors } }) => colors.borderListColor};
+  background-color: ${({ theme: { colors } }) => colors.yellow};
   cursor: pointer;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 

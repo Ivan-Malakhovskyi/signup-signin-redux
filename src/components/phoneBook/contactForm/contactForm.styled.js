@@ -9,11 +9,13 @@ export const Main = styled(Formik)`
 
 export const ContactForm = styled(Form)`
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   gap: 16px;
   padding: 20px;
 
-  background-color: ${({ theme: { colors } }) => colors.white};
+  border-radius: 18px;
+
+  background-color: ${({ theme: { colors } }) => colors.MainBackgroundColor};
   box-shadow: ${({ theme: { shadows } }) => shadows.addBoxShadow};
 `;
 
@@ -61,7 +63,7 @@ export const FieldForm = styled(Field)`
 
   &:focus,
   &:active {
-    border-color: #1db954;
+    border-color: ${({ theme: { colors } }) => colors.addBlack};
     outline: none;
   }
 `;
@@ -71,11 +73,12 @@ export const Buttons = styled.button`
   justify-content: center;
   align-items: center;
   width: 300px;
-  padding: 20px 60px;
+  padding: 20px 40px;
   margin: 0 auto;
   cursor: pointer;
-  color: ${({ theme: { colors } }) => colors.black};
-  border: 1px solid teal;
+  color: ${({ theme: { colors } }) => colors.white};
+  background-color: ${({ theme: { colors } }) => colors.addBlack};
+  border: none;
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -86,6 +89,6 @@ export const Buttons = styled.button`
 
   &:hover,
   &:focus {
-    background-color: teal;
+    background-color: ${({ theme: { colors } }) => colors.black};
   }
 `;

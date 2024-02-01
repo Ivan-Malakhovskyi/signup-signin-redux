@@ -17,7 +17,7 @@ const theme = {
     backroundBase: '#1ed760',
     backroundHighLight: '#169c46',
     red: 'red',
-    yellow: 'yellow',
+    yellow: '#EAC645',
     black: '#333',
     addBlack: '#111',
     white: '#FFFFFF',
@@ -42,6 +42,9 @@ const theme = {
   radii: {
     sm: '1px',
     md: '4px',
+  },
+  gradient: {
+    hero: 'linear - gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7))',
   },
 };
 
