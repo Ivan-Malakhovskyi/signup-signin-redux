@@ -1,4 +1,4 @@
-import { logIn } from 'redux/auth/auth-operations';
+import { signIn } from 'redux/auth/auth-operations';
 import { getLoginSchema } from 'redux/auth/validation';
 
 import {
@@ -20,7 +20,7 @@ const Login = () => {
 
   const handleSibmit = (values, { resetForm }) => {
     const { email, password } = values;
-    dispacth(logIn({ email, password }));
+    dispacth(signIn({ email, password }));
     toast.success(`Your account ${email} has been found, Login`);
     resetForm();
   };

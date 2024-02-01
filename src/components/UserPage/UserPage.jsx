@@ -1,5 +1,5 @@
 import { Container, Topic } from 'components/AuthNavMenu/AuthNavMenu.styled';
-import { logOut } from 'redux/auth/auth-operations';
+import { signOut } from 'redux/auth/auth-operations';
 import { useDispatch } from 'react-redux';
 import { Button } from '@chakra-ui/react';
 import { useAuthUser } from 'hooks/useAuthUser';
@@ -24,9 +24,9 @@ export const UserPage = () => {
         colorScheme="orange"
         variant="outline"
         type="button"
-        onClick={() => dispatch(logOut())}
+        onClick={() => dispatch(signOut())}
       >
-        Logout
+        SignOut
       </Button>
     </Container>
   );
