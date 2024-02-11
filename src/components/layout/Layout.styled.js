@@ -27,7 +27,11 @@ export const BaseContainer = styled.div`
 `;
 
 export const Header = styled.header`
-  /* border-radius: 6px; */
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   padding: 5px;
   background-color: #333;
   border-bottom: 1px solid ${({ theme: { colors } }) => colors.headerColor};

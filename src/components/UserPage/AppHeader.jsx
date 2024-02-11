@@ -7,6 +7,7 @@ import { useAuthUser } from 'hooks/useAuthUser';
 
 export const AppHeader = () => {
   const { isUserLoggedIn } = useAuthUser();
+
   return (
     <Header>
       <Nav>

@@ -32,12 +32,11 @@ export const LabelForm = styled.label`
 
 export const ErrorMsg = styled(ErrorMessage)`
   margin-top: 10px;
-  font-size: 16px;
-  font-style: normal;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.72px;
-  color: red;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #dc2626;
 `;
 
 export const Error = styled(ErrorMessage)`
